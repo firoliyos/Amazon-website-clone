@@ -6,6 +6,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import {logo} from '../../assets/index'
 import { allItems } from '../../constants';
 
+
 const Header = ()=> {
     const [showAll, setShowAll] = useState(false)
   return (
@@ -26,8 +27,10 @@ const Header = ()=> {
           </span>
         </p>
       </div>
+
       {/* Deliver end here */}
       {/* Search start here */}
+
       <div className='h-10 rounded-md flex flex-grow relative'>
         <span onClick={() => setShowAll(!showAll)} className='w-14 h-full bg-gray-200 hover:bg-gray-300 border-2 cursor-pointer duration-300 text-sm text-amazon_blue font-titleFont flex items-center justify-center rounded-tl-md rounded-bl-md'>
           All <span></span> 
@@ -54,13 +57,35 @@ const Header = ()=> {
           <SearchIcon />
         </span>
       </div>
+
+
       {/* Search end here */}
       {/* Signin start here */}
 
+      <div className='flex flex-col items-start justify-center headerHover'>
+        <p className='text-xs text-lightText font-light'>Hello, Sign in</p>
+        <p className='text-sm font-semibold -mt-1 text text-whiteText'>
+          Accounts & Lists 
+          <span>
+            <ArrowDropDownIcon />
+          </span>
+         </p>
+      </div>
       {/* Signin end here */}
       {/* Orders start here */}
-
+      <div className='flex flex-col items-start justify-center headerHover'>
+        <p className='text-xs text-lightText font-light'>Returns</p>
+        <p className='text-sm font-semibold -mt-1 text text-whiteText'>& Orders</p>
+      </div>
       {/* Orders end start here */}
+      {/* Cart start here */}
+      <div className='flex items-start justify-center headerHover relative'>
+        <ShoppingCartIcon />
+        <p className='text-xs font-semibold mt-3 text-whiteText'>
+          Cart <span className='absolute text-xs -top-1 left-6 font-semibold p-1 h-4 bg-[#f3a847] text-amazon_blue rounded-full flex justify-center items-center'>0</span>
+          </p>
+      </div>
+      {/* Cart end here */}
       </div>
     </div>
   )
